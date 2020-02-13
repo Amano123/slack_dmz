@@ -15,12 +15,9 @@ var url_postMessage = 'https://slack.com/api/chat.postMessage';
 
 //user_idを暗号化する。
 function base64Encode(id){
-//  var id = "UA0V503S4";
   var encoded = Utilities.base64EncodeWebSafe(id);
-  //Logger.log(encoded.slice(0,6));
   return encoded.slice(0,6);
 }
-
 
 function doPost(e) {
   var parameter = e.parameter
@@ -33,6 +30,7 @@ function doPost(e) {
     throw new Error('Invalid token');
   }
   
+  //テキストが空リプの場合
   if (slack_text == ""){
     return return_message("[error] You need text");
   }
@@ -55,7 +53,7 @@ function doPost(e) {
   
   var response = UrlFetchApp.fetch(url_postMessage, options)
   
-  if (slack_user = root_user_id){
+  if (slack_user == root_user_id){
     return return_message(response);
   }
   return reply_to_slack(response);
