@@ -2,6 +2,15 @@
 slackで匿名のチャットができるチャンネルを作成するために作成した。  
 まだまだ仮なので名前のセンスがある人は考えてみてください
 
+本来サーバーを建てる必要があるのだが、GASをつかうことでサーバーレスで操作できるのではないかと考えてやってみることにした。
+
+## 参考サイト
+https://qiita.com/peisuke/items/80984db8b47cd8243019  
+上記のサイトを参考にさせていただきました。
+
+## 構成
+Slash Commandで、slackの「記入中」の表記を回避できるため、slash commandを使うことにした。
+
 ## <img src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif" width="30"> doPost parameter
 <center>
 
